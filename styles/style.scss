@@ -72,6 +72,7 @@
 
 $background: linear-gradient(10deg, #8caffe, #a0d1f0);
 $transbluecent: rgba(85, 150, 220, 0.8);
+$transbluecenter: rgba(85, 150, 220, 0.4);
 
 * {
     margin: 0;
@@ -92,6 +93,7 @@ body {
             position: relative;
             display: flex;
             justify-content: center;
+            margin-bottom: 10px;
             
             .side-frame {
                 flex: 1 1 0;
@@ -140,6 +142,37 @@ body {
                             color: darken(darkred, 10%);
                             text-shadow: 0 0 2px darkred;
                         }
+                    }
+                }
+            }
+        }
+        
+        main {
+            display: flex;
+            flex-direction: row;
+            
+            .article-wrapper {
+                width: 70%;
+                
+                article {
+                    background: $transbluecent;
+                    margin: 10px 0;
+                    padding: 10px;
+                    
+                    h1 {
+                        font-size: 28px;
+                        text-align: center;
+                        margin: 15px 0;
+                    }
+                    
+                    img {
+                        display: block;
+                        margin: 10px auto;
+                        max-width: 100%;
+                    }
+                    
+                    p {
+                        margin: 10px;
                     }
                 }
             }

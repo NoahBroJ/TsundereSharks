@@ -11,38 +11,39 @@
   to {
     transform: rotate(180deg) translateY(-5px); } }
 
-/* line 76, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+/* line 77, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
 * {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif; }
 
-/* line 82, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+/* line 83, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
 body {
   background-image: linear-gradient(10deg, #8caffe, #a0d1f0);
   background-repeat: no-repeat;
   min-height: 100vh; }
-  /* line 87, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+  /* line 88, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
   body #wrapper {
     width: 70%;
     margin: 0 auto; }
-    /* line 91, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+    /* line 92, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
     body #wrapper header {
       position: relative;
       display: flex;
-      justify-content: center; }
-      /* line 96, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      justify-content: center;
+      margin-bottom: 10px; }
+      /* line 98, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
       body #wrapper header .side-frame {
         flex: 1 1 0;
         background: rgba(85, 150, 220, 0.8); }
-      /* line 101, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      /* line 103, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
       body #wrapper header .picture-frame {
         border: 10px solid rgba(85, 150, 220, 0.8); }
-        /* line 104, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        /* line 106, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
         body #wrapper header .picture-frame img {
           display: block;
           width: 900px; }
-      /* line 111, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      /* line 113, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
       body #wrapper header nav {
         position: absolute;
         bottom: 16%;
@@ -51,10 +52,10 @@ body {
         justify-content: space-around;
         width: 900px;
         background-color: rgba(127, 176, 229, 0.8); }
-        /* line 122, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        /* line 124, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
         body #wrapper header nav .link-item {
           position: relative; }
-          /* line 125, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 127, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
           body #wrapper header nav .link-item a {
             display: block;
             padding: 10px 20px;
@@ -89,9 +90,34 @@ body {
             animation-duration: 100ms;
             animation-iteration-count: infinite;
             animation-direction: alternate; }
-          /* line 139, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 141, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
           body #wrapper header nav .link-item:hover a {
             color: #580000;
             text-shadow: 0 0 2px darkred; }
+    /* line 150, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+    body #wrapper main {
+      display: flex;
+      flex-direction: row; }
+      /* line 154, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      body #wrapper main .article-wrapper {
+        width: 70%; }
+        /* line 157, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        body #wrapper main .article-wrapper article {
+          background: rgba(85, 150, 220, 0.8);
+          margin: 10px 0;
+          padding: 10px; }
+          /* line 162, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          body #wrapper main .article-wrapper article h1 {
+            font-size: 28px;
+            text-align: center;
+            margin: 15px 0; }
+          /* line 168, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          body #wrapper main .article-wrapper article img {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%; }
+          /* line 174, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          body #wrapper main .article-wrapper article p {
+            margin: 10px; }
 
 /*# sourceMappingURL=style.css.map */
