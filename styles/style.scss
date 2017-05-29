@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@keyframes nom1 {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-5px)}
+}
+
+@keyframes nom2 {
+    from {transform: rotate(180deg) translateY(0px)}
+    to {transform: rotate(180deg) translateY(-5px)}
+}
+
+@mixin jagged-border($main-color, $size: 20px) {
+  $unit: 100% / 3;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -$unit;
+    width: 100%;
+    height: $size / 2;
+    background: 
+      linear-gradient(
+        45deg,
+        transparent $unit,
+        $main-color $unit,
+        $main-color $unit * 2,
+        transparent $unit * 2
+      ),
+      linear-gradient(
+        -45deg,
+        transparent $unit,
+        $main-color $unit,
+        $main-color $unit * 2,
+        transparent $unit * 2
+      );
+    background-size: $size $size * 2;
+    animation-name: nom1;
+    animation-duration: 100ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -$unit;
+    width: 100%;
+    height: $size / 2;
+    background: 
+      linear-gradient(
+        45deg,
+        transparent $unit,
+        $main-color $unit,
+        $main-color $unit * 2,
+        transparent $unit * 2
+      ),
+      linear-gradient(
+        -45deg,
+        transparent $unit,
+        $main-color $unit,
+        $main-color $unit * 2,
+        transparent $unit * 2
+      );
+    background-size: $size $size * 2;
+    animation-name: nom2;
+    animation-duration: 100ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+  }
+}
+
+$background: linear-gradient(10deg, #8caffe, #a0d1f0);
+$transbluecent: rgba(85, 150, 220, 0.8);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: $background;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+    #wrapper {
+        width: 70%;
+        margin: 0 auto;
+        
+        header {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            
+            .side-frame {
+                flex: 1 1 0;
+                background: $transbluecent;
+            }
+
+            .picture-frame {
+                border: 10px solid $transbluecent;
+
+                img {
+                    display: block;
+                    width: 900px;
+                }
+            }
+
+
+            nav {
+                position: absolute;
+                bottom: 16%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                width: 900px;
+
+                background-color: lighten($transbluecent, 10%);
+                
+                .link-item {
+                    position: relative;
+                    
+                    a {
+                        display: block;
+                        padding: 10px 20px;
+                        font-size: 20px;
+                        color: black;
+                        text-decoration: none;
+                        text-shadow: 0 0 2px black;
+                        
+                        transition: 0.2s;
+                    }
+                    
+                    &:hover {
+                        @include jagged-border(whitesmoke, 19px);
+                        
+                        a {
+                            color: darken(darkred, 10%);
+                            text-shadow: 0 0 2px darkred;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
