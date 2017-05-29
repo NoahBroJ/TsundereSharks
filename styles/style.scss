@@ -1,75 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 @keyframes nom1 {
-    from {transform: translateY(0px)}
-    to {transform: translateY(-5px)}
-}
-
-@keyframes nom2 {
     from {transform: rotate(180deg) translateY(0px)}
     to {transform: rotate(180deg) translateY(-5px)}
 }
 
-@mixin jagged-border($main-color, $size: 20px) {
-  $unit: 100% / 3;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: -$unit;
-    width: 100%;
-    height: $size / 2;
-    background: 
-      linear-gradient(
-        45deg,
-        transparent $unit,
-        $main-color $unit,
-        $main-color $unit * 2,
-        transparent $unit * 2
-      ),
-      linear-gradient(
-        -45deg,
-        transparent $unit,
-        $main-color $unit,
-        $main-color $unit * 2,
-        transparent $unit * 2
-      );
-    background-size: $size $size * 2;
-    animation-name: nom1;
-    animation-duration: 100ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: -$unit;
-    width: 100%;
-    height: $size / 2;
-    background: 
-      linear-gradient(
-        45deg,
-        transparent $unit,
-        $main-color $unit,
-        $main-color $unit * 2,
-        transparent $unit * 2
-      ),
-      linear-gradient(
-        -45deg,
-        transparent $unit,
-        $main-color $unit,
-        $main-color $unit * 2,
-        transparent $unit * 2
-      );
-    background-size: $size $size * 2;
-    animation-name: nom2;
-    animation-duration: 100ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    
-  }
+@keyframes nom2 {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-5px)}
 }
 
+@mixin teeth($main-color, $size: 20px, $translate: 0px) {
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: $size / 2;
+        background: 
+            linear-gradient(
+                45deg,
+                transparent $unit,
+                $main-color $unit,
+                $main-color $unit * 2,
+                transparent $unit * 2
+            ),
+            linear-gradient(
+                -45deg,
+                transparent $unit,
+                $main-color $unit,
+                $main-color $unit * 2,
+                transparent $unit * 2
+            );
+        background-size: $size $size * 2;
+        animation: none;
+    }
+    
+    &:before {
+        top: -$unit;
+        transform: rotate(180deg) translateY(-$translate);
+    }
+    
+    &:after {
+        bottom: -$unit;
+        transform: translateY(-$translate);
+    }
+}
+
+@mixin chew($main-color, $size: 20px) {
+    @include teeth($main-color, $size);
+    
+    &:before, &:after {
+        animation-duration: 100ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    &:before {
+        top: -$unit;
+        animation-name: nom1;
+    }
+    
+    &:after {
+        bottom: -$unit;
+        animation-name: nom2;
+    }
+}
+
+$unit: 100% / 3;
 $background: linear-gradient(10deg, #8caffe, #a0d1f0);
 $transbluecent: rgba(85, 150, 220, 0.8);
 $transbluecenter: rgba(85, 150, 220, 0.4);
@@ -87,6 +84,7 @@ body {
     
     #wrapper {
         width: 70%;
+        min-width: 920px;
         margin: 0 auto;
         
         header {
@@ -102,10 +100,11 @@ body {
 
             .picture-frame {
                 border: 10px solid $transbluecent;
+                width: 900px;
 
                 img {
                     display: block;
-                    width: 900px;
+                    width: 100%;
                 }
             }
 
@@ -125,6 +124,7 @@ body {
                     position: relative;
                     
                     a {
+                        position: relative;
                         display: block;
                         padding: 10px 20px;
                         font-size: 20px;
@@ -133,14 +133,56 @@ body {
                         text-shadow: 0 0 2px black;
                         
                         transition: 0.2s;
+                            
+                        &:before, &:after {
+                            content: '♥';
+                            position: absolute;
+                            color: deeppink;
+
+                            opacity: 0;
+                            transition: 0.1s;
+                        }
+
+                        &:before {
+                            font-size: 30px;
+                            transform: scale(0.1, 0.1) translateY(100%) rotate(-30deg);
+                            top: -40px;
+                            right: 10px;
+                        }
+
+                        &:after {
+                            font-size: 18px;
+                            transform: scale(0.1, 0.1) translateY(200%) rotate(10deg);
+                            top: -50px;
+                            right: -5px;
+                        }
                     }
                     
                     &:hover {
-                        @include jagged-border(whitesmoke, 19px);
+                        @include chew(bisque, 19px);
                         
                         a {
                             color: darken(darkred, 10%);
                             text-shadow: 0 0 2px darkred;
+                        }
+                    }
+                    
+                    &:active {
+                        @include teeth(mix(bisque, darkred, 75%), 19px, 13px);
+                        background-image: radial-gradient(darkred, transparent 70%);
+                        
+                        a {
+                            color: black;
+                            
+                            &:before {
+                                transform: scale(1, 1) translateY(0%) rotate(-30deg);
+                                opacity: 1;
+                            }
+                            
+                            &:after {
+                                transform: scale(1, 1) translateY(0%) rotate(10deg);
+                                opacity: 1;
+                            }
                         }
                     }
                 }

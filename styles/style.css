@@ -1,49 +1,52 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @keyframes nom1 {
-  from {
-    transform: translateY(0px); }
-  to {
-    transform: translateY(-5px); } }
-
-@keyframes nom2 {
   from {
     transform: rotate(180deg) translateY(0px); }
   to {
     transform: rotate(180deg) translateY(-5px); } }
 
-/* line 77, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+@keyframes nom2 {
+  from {
+    transform: translateY(0px); }
+  to {
+    transform: translateY(-5px); } }
+
+/* line 74, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
 * {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif; }
 
-/* line 83, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+/* line 80, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
 body {
   background-image: linear-gradient(10deg, #8caffe, #a0d1f0);
   background-repeat: no-repeat;
   min-height: 100vh; }
-  /* line 88, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+  /* line 85, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
   body #wrapper {
     width: 70%;
+    min-width: 920px;
     margin: 0 auto; }
-    /* line 92, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+    /* line 90, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
     body #wrapper header {
       position: relative;
       display: flex;
       justify-content: center;
       margin-bottom: 10px; }
-      /* line 98, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      /* line 96, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
       body #wrapper header .side-frame {
         flex: 1 1 0;
         background: rgba(85, 150, 220, 0.8); }
-      /* line 103, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      /* line 101, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
       body #wrapper header .picture-frame {
-        border: 10px solid rgba(85, 150, 220, 0.8); }
-        /* line 106, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        border: 10px solid rgba(85, 150, 220, 0.8);
+        width: 900px; }
+        /* line 105, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
         body #wrapper header .picture-frame img {
           display: block;
-          width: 900px; }
-      /* line 113, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          width: 100%; }
+      /* line 112, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
       body #wrapper header nav {
         position: absolute;
         bottom: 16%;
@@ -52,11 +55,12 @@ body {
         justify-content: space-around;
         width: 900px;
         background-color: rgba(127, 176, 229, 0.8); }
-        /* line 124, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        /* line 123, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
         body #wrapper header nav .link-item {
           position: relative; }
-          /* line 127, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 126, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper header nav .link-item a {
+            position: relative;
             display: block;
             padding: 10px 20px;
             font-size: 20px;
@@ -64,59 +68,113 @@ body {
             text-decoration: none;
             text-shadow: 0 0 2px black;
             transition: 0.2s; }
-          /* line 16, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+            /* line 137, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item a:before, body #wrapper header nav .link-item a:after {
+              content: '♥';
+              position: absolute;
+              color: deeppink;
+              opacity: 0;
+              transition: 0.1s; }
+            /* line 146, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item a:before {
+              font-size: 30px;
+              transform: scale(0.1, 0.1) translateY(100%) rotate(-30deg);
+              top: -40px;
+              right: 10px; }
+            /* line 153, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item a:after {
+              font-size: 18px;
+              transform: scale(0.1, 0.1) translateY(200%) rotate(10deg);
+              top: -50px;
+              right: -5px; }
+          /* line 14, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:hover:before, body #wrapper header nav .link-item:hover:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 9.5px;
+            background: linear-gradient(45deg, transparent 33.33333%, bisque 33.33333%, bisque 66.66667%, transparent 66.66667%), linear-gradient(-45deg, transparent 33.33333%, bisque 33.33333%, bisque 66.66667%, transparent 66.66667%);
+            background-size: 19px 38px;
+            animation: none; }
+          /* line 38, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper header nav .link-item:hover:before {
-            content: '';
-            position: absolute;
-            bottom: -33.33333%;
-            width: 100%;
-            height: 9.5px;
-            background: linear-gradient(45deg, transparent 33.33333%, whitesmoke 33.33333%, whitesmoke 66.66667%, transparent 66.66667%), linear-gradient(-45deg, transparent 33.33333%, whitesmoke 33.33333%, whitesmoke 66.66667%, transparent 66.66667%);
-            background-size: 19px 38px;
-            animation-name: nom1;
-            animation-duration: 100ms;
-            animation-iteration-count: infinite;
-            animation-direction: alternate; }
-          /* line 43, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
-          body #wrapper header nav .link-item:hover:after {
-            content: '';
-            position: absolute;
             top: -33.33333%;
-            width: 100%;
-            height: 9.5px;
-            background: linear-gradient(45deg, transparent 33.33333%, whitesmoke 33.33333%, whitesmoke 66.66667%, transparent 66.66667%), linear-gradient(-45deg, transparent 33.33333%, whitesmoke 33.33333%, whitesmoke 66.66667%, transparent 66.66667%);
-            background-size: 19px 38px;
-            animation-name: nom2;
+            transform: rotate(180deg) translateY(0px); }
+          /* line 43, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:hover:after {
+            bottom: -33.33333%;
+            transform: translateY(0px); }
+          /* line 52, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:hover:before, body #wrapper header nav .link-item:hover:after {
             animation-duration: 100ms;
             animation-iteration-count: infinite;
             animation-direction: alternate; }
-          /* line 141, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 58, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:hover:before {
+            top: -33.33333%;
+            animation-name: nom1; }
+          /* line 63, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:hover:after {
+            bottom: -33.33333%;
+            animation-name: nom2; }
+          /* line 164, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper header nav .link-item:hover a {
             color: #580000;
             text-shadow: 0 0 2px darkred; }
-    /* line 150, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 170, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+          body #wrapper header nav .link-item:active {
+            background-image: radial-gradient(darkred, transparent 70%); }
+            /* line 14, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item:active:before, body #wrapper header nav .link-item:active:after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 9.5px;
+              background: linear-gradient(45deg, transparent 33.33333%, #e2ab93 33.33333%, #e2ab93 66.66667%, transparent 66.66667%), linear-gradient(-45deg, transparent 33.33333%, #e2ab93 33.33333%, #e2ab93 66.66667%, transparent 66.66667%);
+              background-size: 19px 38px;
+              animation: none; }
+            /* line 38, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item:active:before {
+              top: -33.33333%;
+              transform: rotate(180deg) translateY(-13px); }
+            /* line 43, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item:active:after {
+              bottom: -33.33333%;
+              transform: translateY(-13px); }
+            /* line 174, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+            body #wrapper header nav .link-item:active a {
+              color: black; }
+              /* line 177, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+              body #wrapper header nav .link-item:active a:before {
+                transform: scale(1, 1) translateY(0%) rotate(-30deg);
+                opacity: 1; }
+              /* line 182, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
+              body #wrapper header nav .link-item:active a:after {
+                transform: scale(1, 1) translateY(0%) rotate(10deg);
+                opacity: 1; }
+    /* line 192, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
     body #wrapper main {
       display: flex;
       flex-direction: row; }
-      /* line 154, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+      /* line 196, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
       body #wrapper main .article-wrapper {
         width: 70%; }
-        /* line 157, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+        /* line 199, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
         body #wrapper main .article-wrapper article {
           background: rgba(85, 150, 220, 0.8);
           margin: 10px 0;
           padding: 10px; }
-          /* line 162, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 204, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper main .article-wrapper article h1 {
             font-size: 28px;
             text-align: center;
             margin: 15px 0; }
-          /* line 168, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 210, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper main .article-wrapper article img {
             display: block;
             margin: 10px auto;
             max-width: 100%; }
-          /* line 174, C:/Users/noah0030/OneDrive for Business/Visualisering/V3/TsundereSharks/TsundereSharks/styles/style.scss */
+          /* line 216, C:/Users/Noah Bro-Jørgensen/Documents/Visualisering/TsundereSharks/styles/style.scss */
           body #wrapper main .article-wrapper article p {
             margin: 10px; }
 
