@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 @keyframes nom1 {
     from {transform: rotate(180deg) translateY(0px)}
@@ -91,7 +91,6 @@ body {
             position: relative;
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
             
             .side-frame {
                 flex: 1 1 0;
@@ -138,6 +137,7 @@ body {
                             content: '♥';
                             position: absolute;
                             color: deeppink;
+                            text-shadow: none;
 
                             opacity: 0;
                             transition: 0.1s;
@@ -158,8 +158,12 @@ body {
                         }
                     }
                     
+                    &before, &:after {
+                        transition: 0.1s;
+                    }
+                    
                     &:hover {
-                        @include chew(bisque, 19px);
+                        @include chew(bisque, 20px);
                         
                         a {
                             color: darken(darkred, 10%);
@@ -168,20 +172,23 @@ body {
                     }
                     
                     &:active {
-                        @include teeth(mix(bisque, darkred, 75%), 19px, 13px);
-                        background-image: radial-gradient(darkred, transparent 70%);
+                        @include teeth(mix(bisque, darkred, 75%), 20px, 13px);
+                        /*background-image: radial-gradient(darkred, transparent 70%);*/
                         
                         a {
-                            color: black;
+                            color: darkred;
+                            text-shadow: 0 0 10px darkred;
                             
                             &:before {
                                 transform: scale(1, 1) translateY(0%) rotate(-30deg);
                                 opacity: 1;
+                                text-shadow: none;
                             }
                             
                             &:after {
                                 transform: scale(1, 1) translateY(0%) rotate(10deg);
                                 opacity: 1;
+                                text-shadow: none;
                             }
                         }
                     }
@@ -194,7 +201,8 @@ body {
             flex-direction: row;
             
             .article-wrapper {
-                width: 70%;
+                flex: 1 1 70%;
+                margin-right: 10px;
                 
                 article {
                     background: $transbluecent;
@@ -216,6 +224,83 @@ body {
                     p {
                         margin: 10px;
                     }
+                }
+            }
+            
+            aside {
+                flex: 1 1 30%;
+                
+                h2 {
+                    font-size: 20px;
+                    text-align: center;
+                    margin: 0 0 10px;
+                }
+                
+                .aside-box {
+                    background: lighten($transbluecent, 10%);
+                    margin: 10px 0;
+                    padding: 10px;
+                }
+                
+                .login {
+                    
+                    .form-group {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 5px;
+                        
+                        label {
+                            display: block;
+                            font-size: 16px;
+                            font-weight: bold;
+                            line-height: 20px;
+                            margin: 5px 0;
+                        }
+
+                        input {
+                            display: block;
+                            font-size: 16px;
+                            height: 28px;
+                            flex: 1 1 100%;
+                            margin: 5px 0;
+                            padding: 5px 8px;
+                            border: 1px solid rgba(0, 0, 0, 0.15);
+                            border-radius: 5px;
+                            
+                            &:focus {
+                                outline: none;
+                                border: 1px solid rgba(0, 0, 0, 0.3);
+                            }
+                            
+                            &#password {
+                                letter-spacing: 3px;
+                                font-weight: bolder;
+                            }
+                        }
+                        
+                        small {
+                            font-size: 10px;
+                            color: rgba(0, 0, 0, 0.8);
+                        }
+                    }
+                }
+                
+                .news {
+                    article {
+                        margin-bottom: 10px;
+                        
+                        h3 {
+                            font-size: 16px;
+                            font-weight: normal;
+                        }
+
+                        p {
+                            font-size: 12px;
+                            font-style: italic;
+                        }
+                    }
+                    
                 }
             }
         }

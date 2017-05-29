@@ -49,10 +49,72 @@
                     <p>Velit quos maxime eos, itaque ducimus sequi consequuntur harum autem quis aperiam! Laboriosam itaque numquam voluptatum, officiis quae libero at nam, molestias accusantium deserunt sapiente nostrum magni quisquam tempora consequatur!</p>
                 </article>
             </div>
-        </main>
-        <aside>
             
-        </aside>
+            <aside>
+                <div class="login aside-box">
+                    <h2>Login</h2>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email">
+                            <small>It's not like we'll share your email with anyone... baka.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input id="password" type="password">
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="news aside-box">
+                    <h2>Site News</h2>
+                    <article>
+                        <h3>Mini-article 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 2</h3>
+                        <p>Sint tempore saepe optio omnis neque deleniti labore.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 3</h3>
+                        <p>Suscipit optio voluptates ducimus ad deleniti, sequi rem, quidem molestiae cupiditate tempore.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 4</h3>
+                        <p>Tempora ut obcaecati suscipit sapiente nam veritatis voluptates optio odio repellendus.</p>
+                    </article>
+                </div>
+                
+                <div class="news aside-box">
+                    <h2>News around the World</h2>
+                    <article>
+                        <h3>Mini-article 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 2</h3>
+                        <p>Sint tempore saepe optio omnis neque deleniti labore.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 3</h3>
+                        <p>Suscipit optio voluptates ducimus ad deleniti, sequi rem, quidem molestiae cupiditate tempore.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 4</h3>
+                        <p>Tempora ut obcaecati suscipit sapiente nam veritatis voluptates optio odio repellendus.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 5</h3>
+                        <p>Tempora ut obcaecati suscipit sapiente nam veritatis voluptates optio odio repellendus.</p>
+                    </article>
+                    <article>
+                        <h3>Mini-article 6</h3>
+                        <p>Tempora ut obcaecati suscipit sapiente nam veritatis voluptates optio odio repellendus.</p>
+                    </article>
+                </div>
+            </aside>
+        </main>
         
         <footer>
             
