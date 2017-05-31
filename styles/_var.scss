@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+@keyframes nom1 {
+    from {transform: rotate(180deg) translateY(0px)}
+    to {transform: rotate(180deg) translateY(-5px)}
+}
+
+@keyframes nom2 {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-5px)}
+}
+
+@mixin teeth($main-color, $size: 20px, $translate: 0px) {
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: $size / 2;
+        background: 
+            linear-gradient(
+                45deg,
+                transparent $unit,
+                $main-color $unit,
+                $main-color $unit * 2,
+                transparent $unit * 2
+            ),
+            linear-gradient(
+                -45deg,
+                transparent $unit,
+                $main-color $unit,
+                $main-color $unit * 2,
+                transparent $unit * 2
+            );
+        background-size: $size $size * 2;
+        animation: none;
+    }
+    
+    &:before {
+        top: -$unit;
+        transform: rotate(180deg) translateY(-$translate);
+    }
+    
+    &:after {
+        bottom: -$unit;
+        transform: translateY(-$translate);
+    }
+}
+
+@mixin chew($main-color, $size: 20px) {
+    @include teeth($main-color, $size);
+    
+    &:before, &:after {
+        animation-duration: 100ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    
+    &:before {
+        top: -$unit;
+        animation-name: nom1;
+    }
+    
+    &:after {
+        bottom: -$unit;
+        animation-name: nom2;
+    }
+}
+
+$unit: 100% / 3;
+$background: linear-gradient(10deg, #8caffe, #a0d1f0);
+$toothColor: ivory;
+$heartColor: deeppink;
+$transbluecent: rgba(85, 150, 220, 0.8);
+$transbluecenter: rgba(85, 150, 220, 0.4);
