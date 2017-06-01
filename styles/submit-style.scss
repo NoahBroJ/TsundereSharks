@@ -1,0 +1,71 @@
+@import 'var';
+
+main {
+    #form-wrapper {
+        background: $transbluecent;
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0;
+        padding: 10px;
+        
+        .form-half {
+            flex: 1 1 50%;
+            
+            &:first-child {
+                margin-right: 20px;
+            }
+            
+            .form-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 5px;
+
+                label {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 20px;
+                    margin: 5px 0;
+                }
+
+                input, textarea {
+                    display: block;
+                    font-size: 16px;
+                    height: 28px;
+                    flex: 1 1 100%;
+                    margin: 5px 0;
+                    padding: 5px 8px;
+                    background: rgba(255, 255, 255, 0.9);
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: none;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                    }
+                }
+                
+                textarea {
+                    resize: vertical;
+                }
+                
+                .submit {
+                    background: rgba(255, 255, 255, 0.7);
+                    line-height: 20px;
+                    width: 25%;
+                    margin: 10px auto;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.5);
+                        cursor: pointer;
+                    }
+
+                    &:active {
+                        background: $transbluecent;
+                    }
+                }
+            }
+        }
+    }
+}

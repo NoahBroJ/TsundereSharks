@@ -123,26 +123,34 @@ main {
             }
         }
 
-        .news {
-            article {
-                margin-bottom: 10px;
-
-                h3 {
-                    font-size: 16px;
-                    font-weight: normal;
-                }
-
-                p {
-                    font-size: 12px;
-                    font-style: italic;
-                }
-            }
-            &#recent-posts {
+        .news-wrapper {
+            top: 0;
+            
+            section {
+                
                 article {
-                    transition: 0.2s;
-                    
-                    &:hover {
-                        background: darken($transbluecent, 10%);
+                    margin-bottom: 10px;
+
+                    h3 {
+                        font-size: 16px;
+                        font-weight: normal;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        font-style: italic;
+                    }
+                }
+                
+                &#recent-posts {
+
+                    article {
+                        transition: 0.2s;
+
+                        &:hover {
+                            cursor: pointer;
+                            background: $transbluecent;
+                        }
                     }
                 }
             }
