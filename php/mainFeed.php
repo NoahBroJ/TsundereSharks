@@ -9,9 +9,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
         <p><?php echo $row['content'] ?></p>
         <footer>
             <div class="author-box">
-                <i class="author"><?php echo $row['authorId'] ?></i>
+                <img src="<?php echo $row['profilePic'] ?>" alt="<?php echo $row['userName']." profile picture" ?>" class="profile-pic">
+                <i class="author"><?php echo $row['userName'] ?></i>
             </div>
-            <i class="time-stamp"><?php echo $row['publish'] ?></i>
+            <i class="time-stamp"><?php echo date("H:i - jS \of M - Y", $row['publish']) ?></i>
         </footer>
     </article>
 <?php

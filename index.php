@@ -13,47 +13,42 @@
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <div class="side-frame"></div>
-            <div class="picture-frame">
-                <img src="img/hShark.jpg" alt="Big Tsundere">
-            </div>
-            <div class="side-frame"></div>
-            <nav>
-                <div class="link-item active-link"><a href="#">Kyaaaa!</a></div>
-                <div class="link-item"><a href="submit.php">S-submit!</a></div>
-                <div class="link-item"><a href="#">Senpai!</a></div>
-                <div class="link-item"><a href="#">Login/Sign up</a></div>
-            </nav>
-        </header>
+        
+        <?php require "header.php" ?>
         
         <main>
             <div class="article-wrapper">
                 
-                <?php
-                include "php/mainFeed.php";
-                ?>
+                <?php include "php/mainFeed.php"; ?>
                 
             </div>
             
             <aside>
-                <section class="login aside-box">
-                    <form action="">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input id="email" type="email">
-                            <small>It's not like we'll share your email with anyone... baka.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input id="password" type="password">
-                        </div>
-                        <div class="form-group">
-                            <input class="submit" value="Login" type="submit">
-                            <input class="submit" value="Login gently" type="submit">
-                        </div>
-                    </form>
-                </section>
+                
+                <?php if(isset($_SESSION['userName']) && !empty($_SESSION['userName'])) { ?>
+                    <section class="user-panel aside-box">
+                        <p>Welcome to TsundereSharks, <?php echo $_SESSION['userName'] ?>!</p>
+                        <p><a href="php/logout.php?logout=true" class="btn">Logout</a></p>
+                    </section>
+                <?php } else { ?>
+                    <section class="login aside-box">
+                        <form action="php/session.php" method="POST">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input name="email" id="email" type="email">
+                                <small>It's not like we'll share your email with anyone... baka.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input name="password" id="password" type="password">
+                            </div>
+                            <div class="form-group">
+                                <input class="submit" value="Login" type="submit">
+                                <input class="submit" value="Login gently" type="submit">
+                            </div>
+                        </form>
+                    </section>
+                <?php } ?>
                 
                 <div class="news-wrapper">
                     <section id="recent-posts" class="aside-box">
@@ -89,8 +84,7 @@
         </main>
     </div>
     
-    <footer class="main-footer">
-        © Noah Bro-Jørgensen | 2017
-    </footer>
+    <?php require "footer.php" ?>
+    
 </body>
 </html>

@@ -69,4 +69,12 @@ main #form-wrapper {
         main #form-wrapper .form-half .form-group .submit:active {
           background: rgba(85, 150, 220, 0.8); }
 
+/* line 72, C:/xampp/htdocs/TsundereSharks/styles/submit-style.scss */
+main #reprimand {
+  background: rgba(85, 150, 220, 0.8);
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center; }
+
 /*# sourceMappingURL=submit-style.css.map */
