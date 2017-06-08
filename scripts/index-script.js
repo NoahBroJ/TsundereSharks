@@ -1,8 +1,14 @@
 $(document).ready(function() {
     /*Variables for fixing/unfixing news-wrapper*/
-    var newsPos = $(".news-wrapper").offset().top;
-    var newsLeft = $(".news-wrapper").offset().left;
-    var newsWidth = $(".news-wrapper").width();
+    var newsPos = $("#news-pos").offset().top;
+    var newsLeft = $("#news-pos").offset().left;
+    var newsWidth = $("#news-pos").width();
+    
+    $(window).resize(function() {
+        newsPos = $("#news-pos").offset().top;
+        newsLeft = $("#news-pos").offset().left;
+        newsWidth = $("#news-pos").width();
+    });
     
     /*Link recent post articles to main feed articles*/
     $("#recent-posts > article").on("click", function() {
@@ -27,20 +33,25 @@ $(document).ready(function() {
         }
     });
     
+    $(window).resize(function() {
+        if ($(window).scrollTop() > newsPos) {
+            $(".news-wrapper").css({"width": newsWidth + "px", "left": newsLeft});
+        }
+    });
+    
+    /*Shorten p-tag on recent articles*/
+    var pLength = 90;
     for (i = 0; i < 5; i++) {
-        if ($("#recent-" + i + "> p").text().length > 30) {
+        if ($("#recent-" + i + "> p").text().length > pLength) {
             var p = $("#recent-" + i + " > p");
-            var newString = p.text().substring(0, 27);
+            var newString = p.text().substring(0, pLength - 3);
             
-            var lastSpace = p.text().indexOf(" ");
-            console.log("Element number " + i + " has last space at " + lastSpace);
+            var lastSpace = newString.lastIndexOf(" ");
             
-            /*newString = newString.substring(0, lastSpace);*/
+            newString = newString.substring(0, lastSpace);
             
             newString = newString + "...";
             p.text(newString);
         }
     }
-    
-    console.log($("#recent-2 > p").text().length);
 });

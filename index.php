@@ -35,7 +35,7 @@
                         <form action="php/session.php" method="POST">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input name="email" id="email" type="email">
+                                <input name="email" id="email" type="text">
                                 <small>It's not like we'll share your email with anyone... baka.</small>
                             </div>
                             <div class="form-group">
@@ -50,6 +50,7 @@
                     </section>
                 <?php } ?>
                 
+                <div id="news-pos"></div>
                 <div class="news-wrapper">
                     <section id="recent-posts" class="aside-box">
                         <h2>Recent Posts</h2>
