@@ -12,6 +12,7 @@ $statement->execute();
 if($row = $statement->fetch()) {
     /*Login lykkedes*/
     session_start();
+    $_SESSION['userId'] = $row['userId'];
     $_SESSION['email'] = $row['email'];
     $_SESSION['access'] = $row['access'];
     $_SESSION['userName'] = $row['userName'];

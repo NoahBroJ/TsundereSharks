@@ -7,5 +7,6 @@ $stmt = $dbh->prepare("SELECT * FROM users WHERE userId = ?");
 $stmt->bindParam(1, $userId);
 $stmt->execute();
 
+/*Fetch user data*/
 $author = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
